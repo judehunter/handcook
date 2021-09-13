@@ -1,9 +1,13 @@
-import {styled} from '../stitches.config'
+import { Button } from './Button';
+import {globalCss, styled} from './stitches.config'
 
-const _HelloWorld = styled('div', {
-  color: '$gray500',
-})
+const globalStyles = globalCss({
+  'body': { margin: 0, padding: 0 },
+});
 
 export const Root = () => {
-  return <div><_HelloWorld>HelloWorld</_HelloWorld></div>
+  globalStyles();
+  return <div>
+    <Button>Test</Button>
+  </div>
 }
