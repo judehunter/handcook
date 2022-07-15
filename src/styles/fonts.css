@@ -1,0 +1,11 @@
+/* @font-face {
+  font-family: 'Inter var experimental';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  src: url("Inter.var.woff2?v=3.19") format("woff2");
+}
+.inter { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  .inter { font-family: 'Inter var experimental', sans-serif; }
+} */

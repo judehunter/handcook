@@ -1,5 +1,2 @@
-import ReactDOM from 'react-dom';
-import {Root} from './Root';
-
-const rootElement = document.getElementById('root');
-ReactDOM.render(<Root />, rootElement);
+export { default as Button } from './components/Button'
+export { default as Logo } from './components/Logo'
