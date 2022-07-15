@@ -4,11 +4,17 @@ import type {AppProps} from 'next/app';
 import GlobalStyles from '../styles/GlobalStyles';
 // import '../styles/fonts.css';
 
-const App = ({Component, pageProps}: AppProps) => (
-  <CacheProvider value={cache}>
-    <GlobalStyles />
-    <Component {...pageProps} />
-  </CacheProvider>
-);
+const App = ({Component, pageProps}: AppProps) => {
+  const Layout = (Component as any).getLayout?.() ?? (({children}) => children);
+
+  return (
+    <CacheProvider value={cache}>
+      <GlobalStyles />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CacheProvider>
+  );
+};
 
 export default App;
