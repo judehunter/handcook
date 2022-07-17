@@ -21,7 +21,7 @@ export const Link = ({
       <ApplyToChildren
         className={`${rest.className ?? ''} ${isActive ? 'active' : ''}`}
       >
-        {children}
+      {children}
       </ApplyToChildren>
     </Link_>
   );

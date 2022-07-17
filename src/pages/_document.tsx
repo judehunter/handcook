@@ -1,7 +1,7 @@
 import React from 'react';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {extractCritical} from '@emotion/server';
-
+import tw from 'twin.macro';
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="inter">
+        <body tw="text-black">
           <Main />
           <NextScript />
         </body>

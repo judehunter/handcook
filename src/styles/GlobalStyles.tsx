@@ -5,7 +5,7 @@ import tw, {css, theme, GlobalStyles as BaseStyles} from 'twin.macro';
 const customStyles = [
   css({
     body: {
-      WebkitTapHighlightColor: theme`colors.purple.500`,
+      // WebkitTapHighlightColor: theme`colors.purple.500`,
       ...tw`antialiased`,
     },
   }),
@@ -15,9 +15,10 @@ const customStyles = [
       font-weight: 100 900;
       font-display: swap;
       font-style: oblique 0deg 10deg;
-      src: url('/Inter.var.woff2?v=3.19') format('woff2');
+      src: url('Inter.var.woff2?v=3.19') format('woff2');
     }
-    html {
+    html,
+    .inter {
       font-family: 'Inter var experimental', sans-serif;
     }
   `,

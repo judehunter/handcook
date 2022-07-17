@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 
-export const ApplyToChildren = ({children, ...rest}) => {
-  const childrenWithProps = React.Children.map(children, (child) => {
-    if (React.isValidElement(child) && (rest as any).className) {
-      return React.cloneElement(child, rest);
-    }
-    return child;
-  });
-  return <>{childrenWithProps}</>;
-};
+export const ApplyToChildren = forwardRef(({children, ...rest}: any, ref) => {
+  const firstChild = React.Children.toArray(children)[0];
+
+  if (!React.isValidElement(firstChild)) {
+    throw new Error('ApplyToChildren must be used with a valid child element.');
+  }
+  return <>{React.cloneElement(firstChild, {...rest, ref})}</>;
+});
